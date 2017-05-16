@@ -1,0 +1,51 @@
+<div ng-controller="adminCtrl">	
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="col-lg-4 loginAndRegistrationHeaders">
+					<button class="btn btn-info" ng-click="loadAllUsers()">Load all users</button>
+					<button class="btn btn-info" ng-click="listNewRegistrations()">Load all reg</button>
+					<button class="btn btn-info" ng-click="loadAllImg()">Load all img</button>
+					<br><br>
+					<button class="btn btn-info" ng-click="getMovieUrls()">Load all videos</button>
+					<br><br>
+					<button type="button" class="btn btn-danger" ng-click="deleteImage()">Delete image</button>
+					<button type="button" class="btn btn-danger" ng-click="deleteVideo()">Delete Video</button>
+					<h3>{{error}}</h3>
+					<h3>{{created}}</h3>
+					<h3>{{removed}}</h3>
+				</div>
+				<div class="col-lg-8 loginAndRegistrationHeaders">
+					<h3>{{regs}}</h3>
+					<h3>{{users}}</h3>
+					<h3>{{deletedimage}}</h3>
+					<ul>
+						<li ng-repeat="new in newRegistrations" class="list-group">
+							<h4>Username: {{new.username}}</h4>
+							<h4>Firstname: {{new.firstname}}</h4>
+							<h4>Lastname: {{new.lastname}}</h4>
+							<h4>Password: {{new.password}}</h4>
+							<h4>Email: {{new.email}}</h4>
+							<h4>Title: {{new.title}}</h4>
+							<button type="button" class="btn btn-danger" ng-click="deniedRegistration(new)"value="{{new}}">Delete</button>
+							<button type="button" class="btn btn-success" ng-click="createNewUser(new)" value="{{new}}">Create</button>
+							<hr>
+						</li>
+					</ul>
+					<ul>
+						<li ng-repeat="image in allImages">
+							<h4>
+							<input type="checkbox" id="{{image._id}}" ng-model="myImages.ids[image._id]">{{image.fileName}}</h4>
+						</li>
+					</ul>
+					<ul>
+						<li ng-repeat="movie in moviesUrls">
+							<h4>
+							<input type="checkbox" id="{{movie._id}}" ng-model="myVideos.ids[movie._id]">{{movie.fileName}}</h4>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

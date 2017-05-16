@@ -1,0 +1,52 @@
+<div id="myCarousel" class="carousel slide" data-interval="5000" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    
+    <div class="item active">
+      <img class="first-slide" src="public/img/background1.jpg" alt="First slide">      
+      <div class="container">
+        <div class="carousel-caption">
+          <!-- <p><a class="btn btn-lg btn-primary" href="register" role="button" ng-click="goToLogin()">Sign up</a></p>-->
+        </div> <!-- carousel-caption -->
+      </div> <!-- container -->
+    </div> <!-- item 1 -->
+    <div class="item">
+      <img class="second-slide" src="public/img/background2.jpg" alt="Second slide">
+      <div class="container">
+        <div class="carousel-caption">
+         <h3>Go To Photos</h3>
+           <p><a class="btn btn-md btn-primary" href="/photos" role="button">Photos</a></p>
+        </div>
+      </div>
+    </div> <!-- item 2 -->
+    <div class="item">
+      <img class="third-slide" src="public/img/background3.jpg" alt="Third slide">
+      <div class="container">
+        <div class="carousel-caption">
+         <h3>Go To Members</h3>
+           <p><a class="btn btn-md btn-primary" href="/members" role="button">Members</a></p>
+        </div>
+      </div>
+    </div> <!-- item 3 -->
+    <div class="item">
+      <img class="fourth-slide" src="public/img/background4.jpg" alt="fourth slide">
+      <div class="container">
+        <div class="carousel-caption">
+         <!-- <h3>Valued by Crowd helps you valuate your company correctly and thus helps you succeed with your crowdfunding campaign.</h3>
+           <p><a class="btn btn-lg btn-primary" href="about" role="button">Learn more</a></p>-->
+        </div>
+      </div>
+    </div>
+  </div> <!-- carousel-inner -->
+</div> <!-- carousel end -->
+<script>
+  $('.carousel').carousel({
+    interval: 4000
+  })
+</script>

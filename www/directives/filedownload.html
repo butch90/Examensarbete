@@ -1,0 +1,21 @@
+<div ng-controller="filedownloadCtrl">
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+	<!--<div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div> -->
+
+       	<img ng-src="../uploads/{{path}}" class="img-responsive" ng-click="destroyModal()">
+
+    </div>
+  </div>
+</div>
+
+	<div class="col-lg-12">
+		<div class="col-lg-4 pictureStyling" ng-repeat="picture in pictureLoader">
+			<img ng-src="../uploads/{{picture.data}}" class="img-responsive" ng-click="enlargePicture(picture.data)">
+		</div>
+	</div>
+</div>

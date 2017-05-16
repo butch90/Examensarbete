@@ -1,0 +1,16 @@
+<div ng-controller="uploadCtrl">
+	<div class="col-lg-6">
+		<button data-toggle="collapse" data-target="#demo" class="btn btn-success photoButton" >Ladda upp bild</button>
+		<div id="demo" class="collapse">
+			<input type="file" file-model="myFile" class="form-control maxwidth center-block inputPropertiesForSlide"/>
+			<input type="button" ng-click="uploadFile()" class="form-control maxwidth center-block btn btn-success inputPropertiesForSlide" value="Upload file">
+			<h3 ng-model="errors">{{errors}}</h3>
+		</div>
+	</div>
+	<div class="col-lg-6">
+		<h3>Du som BRP medlem kan enkelt själv ladda upp bilder till vänster så läggs bilden till automatiskt nedan på sidan.</h3>
+		<h2 ng-model="name" class="text-center">{{name}}</h2>
+	</div>
+</div>
+
+

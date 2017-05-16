@@ -1,0 +1,31 @@
+<div ng-controller="videosCtrl">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div ng-show="loggedIn">
+          <div class="col-lg-6">
+            <br>
+            <input type="text" class="form-control" placeholder="Länk till video" ng-model="userVideo">
+            <br>
+            <button class="btn btn-success" ng-click="addMovie()">Lägg till video</button>
+          </div>  
+          <div class="col-lg-6">
+            <h3>Du som BRP medlem kan enkelt själv ladda upp videos till vänster så läggs videon till automatiskt nedan i video spelaren. Klicka på någon av sidorn av spelaren för att se din tillagda video. Kolla efter sö din video inte finns redan innan du lägger till den.</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <br>
+        <div id="slider" class="carousel slide" data-ride="carousel" data-interval="false">
+          <div class="carousel-inner">
+            <div class="item" ng-class="{active:!$index}" ng-repeat="movie in moviesUrls">
+              <iframe width="1280" height="720" ng-src="{{trustSrc(movie.fileName)}}" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+          <a class="carousel-control right sliderheight" href="#slider" data-slide="next"></a>
+          <a class="carousel-control left sliderheight" href="#slider" data-slide="prev"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

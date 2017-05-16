@@ -1,0 +1,74 @@
+body {
+	margin-top:51px;
+	position: relative;
+	padding-bottom: 80px;
+}
+
+ul {
+	text-decoration: none;
+	list-style: none;
+	margin-top: 5px;	
+}
+
+.footer {
+    position: absolute;
+    height: 80px;
+    bottom: 10px;
+    right: 0px;
+    left: 0px;
+    width: 100%;
+    padding-top: 0px;
+}
+
+.inputProperties {
+    width: 50%;
+    margin-top: 0.5em;
+}
+
+.inputPropertiesForSlide {
+    margin-top: 0.8em;
+}
+
+.loginAndRegistrationHeaders {
+    margin-top: 50px;
+}
+
+.LoginAndRegisterImage {
+    margin-top: 50px;
+}
+
+.photoButton {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.pictureStyling {
+    margin-top: 15px;
+}
+
+.modalImageMaxSize {
+    max-height: 720px;
+    max-width: 1280px;
+}
+
+.faSize { 
+    margin-top: 10px;
+}
+
+.fa-instagram {
+    color: #273746;
+}
+
+.fa-facebook {
+    color: #21618C;
+}
+
+.fa-youtube {
+    color: #922B21;
+}
+
+.sliderheight {
+    height: 94%;
+    opacity: 0.1;
+}
+
