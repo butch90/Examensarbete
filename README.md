@@ -20,5 +20,11 @@ Ett studentprojekt med tillämpning av MEAN-fullstack utveckling.
 
 För mer info angående installation:
   - https://nodejs.org/en/download/ - Nerladdning samt installation
-  - https://docs.mongodb.com/manual/installation/ - Installation av MongoDB
+  - https://docs.mongodb.com/manual/installation/ - Installation av MongoDB  
  
+För mer info angående moduler samt bibliotek:
+  - https://www.npmjs.com/package/express-sessions - Express-session
+  - https://expressjs.com/ - Express  
+  - http://mongoosejs.com/ - Mongoose
+  - https://www.npmjs.com/package/multer - Multer  
+  - https://nodemailer.com/about/ - Nodemailer
