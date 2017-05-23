@@ -2,6 +2,7 @@ m = {
     fs: require('fs'),
     path: require('path'),
     nodemailer: require('nodemailer'),
+    bcrypt: require('bcryptjs'),
 };
 g = {};
 

@@ -6,6 +6,7 @@ module.exports = class Order {
 		this.dataBase  = new g.classes.Mongo();
 		this.user = this.dataBase.getModel('User');
 		this.reg = this.dataBase.getModel('Registration');
+		this.bcrypt = m.bcrypt;
 
 		var me = this;
 		this.router();
@@ -13,7 +14,6 @@ module.exports = class Order {
 	router() {
 		var me = this;
 		this.app.post('/user/newregistration', (req, res) =>{
-			console.log(req.body);
 			me.reg.create(req.body, (err, data) => {
 				if(err) {
 					res.json(err);
@@ -23,35 +23,52 @@ module.exports = class Order {
 		});
 
 		this.app.post('/user/createnewuser', (req, res) =>{
+			var saltRounds = 10;
 			var email = req.body.email;
-				var transporter = me.nodemailer.createTransport({
+			var transporter = me.nodemailer.createTransport({
 			    service: 'gmail',
 			    auth: {
         			user: 'burningrubberpjaskebywebpage@gmail.com',
        				pass: 'brpadmin90'
     			}
-				});
+			});
 
-				var mailOptions = {
+			var mailOptions = {
 					from: '"BRP Admin" <burningrubberpjaskebywebpage@gmail.com>',
 					to: email,
 					subject: 'Brpmc.se - Konto registrerat',
 					html: 'Tack för din registrering, ditt konto är nu godkänt och du kan logga in. Välkommen till brpmc.se',
+			}
+
+			transporter.sendMail(mailOptions, (error, info) => {
+				if(error){
+					console.log(error);
 				}
+				console.log(info.messageId, info.response);
+				me.bcrypt.genSalt(saltRounds, (err, salt) => {
+					if(err)console.log(err);
+					me.bcrypt.hash(req.body.password, salt, (err, hash) => {
+						if(err)console.log(err);
 
-				transporter.sendMail(mailOptions, (error, info) => {
-					if(error){
-						console.log(error);
-					}
-					console.log(info.messageId, info.response);
-
-					me.user.create(req.body, (err, data) => {
-						if(err) {
-							res.json(false);
+						var query = {
+							username: req.body.username,
+							firstname: req.body.firstname,
+							lastname: req.body.lastname,
+							email: req.body.email,
+							title: req.body.title,
+							password: hash
 						}
-						res.json(data);
-					})
-				})
+						me.user.create(query, (err, data) => {
+							if(err) {
+								console.log(err);
+								res.json(false);
+								return;
+							}
+							res.json(data);
+						});
+					});
+				});
+			});
 		});
 
 		this.app.get('/user/getregistrations', (req, res) => {

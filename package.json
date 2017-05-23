@@ -2,6 +2,7 @@
   "name": "redcloud",
   "version": "0.0.1",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "*",
     "compression": "*",
     "cookie-parser": "*",

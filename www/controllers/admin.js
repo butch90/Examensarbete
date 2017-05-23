@@ -52,7 +52,7 @@ app.controller("adminCtrl", ["$scope", "$location", "$http", function ($scope, $
 				lastname = data.lastname,
 				password = data.password,
 				username = data.username,
-				title = 'user';
+				title = 'admin';
 		$http({
 			method: 'POST',
 			url: '/user/createnewuser',
