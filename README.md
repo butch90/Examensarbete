@@ -24,7 +24,8 @@ För mer info angående installation:
  
 För mer info angående moduler samt bibliotek:
   - https://www.npmjs.com/package/express-sessions - Express-session
-  - https://expressjs.com/ - Express  
-  - http://mongoosejs.com/ - Mongoose
   - https://www.npmjs.com/package/multer - Multer  
   - https://nodemailer.com/about/ - Nodemailer
+  - https://expressjs.com/ - Express  
+  - http://mongoosejs.com/ - Mongoose
+
